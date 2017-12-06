@@ -1,0 +1,22 @@
+﻿Necessidade do Usuário: Custo acessível, local nas proximidades da universidade com estabelecimentos de auxílio primário (mercado, farmácia etc).
+Objetivos do site: disponibilizar residências que buscam integrar os universitários com um custo acessível
+
+
+Persona:
+Maicom Pedro da Silva
+18 anos
+900 R$
+Universitário da UFPE
+face, whats, LOL
+tem bicicleta
+original do interior do estado
+
+
+vermelho (se liga no jogo)
+branco
+
+
+Necessidades:
+pode dividir o quarto
+precisa de um lugar para morar enquanto de gradua
+quer poder resolver sem ter que pegar um ônibus ou motorista particular
