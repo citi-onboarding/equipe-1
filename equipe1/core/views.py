@@ -4,6 +4,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 
 # Create your views here.
+
+def index(request):
+	return render(
+		request,
+		'index.html',
+		)
+
 def signUp(request):
     if(request.method == POST):
         form = UserCreationForm()
@@ -31,3 +38,9 @@ def signOut(request):
 	if(request.method == POST):
 		logout(request)
 		return redirect('home')
+
+def logIn(request):
+	return render(
+		request,
+		'formulario.html',
+		)
