@@ -4,6 +4,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
+
 class CustomUserManager(UserManager):
     def create_user(self, username, password,**extra_fields):
     
@@ -31,13 +32,15 @@ class CustomUserManager(UserManager):
         return user
 
 
+
 class Casa(models.Model):
     titulo = models.CharField(max_length=100)
     valor = models.FloatField()
     endereco = models.CharField(max_length=140)
     data_adicao = models.DateField(auto_now=True) #vai ter argumento?
-    foto = models.FileField(upload_to='') #botar o caminho da pasta onde vao ficar as imagens
+    foto = models.FileField(upload_to='oi/') #botar o caminho da pasta onde vao ficar as imagens
     usuario = models.CharField(max_length=50)
+    disponibilide = models.BooleanField
     descricao = models.CharField(max_length=200)
     codigo = models.AutoField(primary_key=True)
 
