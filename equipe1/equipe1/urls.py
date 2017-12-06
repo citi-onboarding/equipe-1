@@ -18,5 +18,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r'^signup/$', core_views.signup, name = 'signup'),
+    path('signup/', core_views.signup, name = 'signup'),
 ]
