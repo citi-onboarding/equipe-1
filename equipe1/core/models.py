@@ -7,11 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class CustomUserManager(UserManager):
     def create_user(self, username, password,**extra_fields):
-    
-
         user = self.model(username=username,**extra_fields)
-
-        
         user.set_password(password)
         user.save(using=self._db)
         return user

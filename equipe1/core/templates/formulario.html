@@ -27,15 +27,10 @@
 		<div class="cadastro">
 			<h3>Cadastro</h3><br>
 
-			<form method="POST">
-			  {% csrf_token %}
-			  Nome:<br>
-			  <input type="text" name="name"><br>
-			  Username:<br>
-			  <input type="text" name="username"><br>
-			  Senha:<br>
-			  <input type="password" name="password"><br>
-			  <button type="submit">Login</button><br>	  
+			<form action='' method="post">
+   			 {% csrf_token %}
+   			 {{ form }}
+    		<input type="submit" value="Submit" />
 			</form>
 		</div>
 		</div>
