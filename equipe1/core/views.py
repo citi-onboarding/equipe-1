@@ -12,16 +12,6 @@ def index(request):
 		'index.html',
 		)
 
-def signIn(request):
-	if(request.method == POST):
-		username = request.POST['username']
-		password = request.POST['password']
-		user = authenticate(request, username=username, password=password)
-		if user is not None:
-			login(request,user)
-			return redirect('home')
-
-
 def signOut(request):
 	if(request.method == POST):
 		logout(request)
@@ -29,19 +19,33 @@ def signOut(request):
 
 def logIn(request):
 	if(request.method == 'POST'):
-		form = RegisterForm(request.POST)
-		if form.is_valid():
-			form.save()
-			username = form.cleaned_data.get('username')
-			password = form.cleaned_data.get('password')
-			user = authenticate (username = username, password = password)
+		if (request.POST['action2'] == 'Register'):
+			register = RegisterForm(request.POST)
+			if register.is_valid():
+				register.save()
+				username = register.cleaned_data.get('username')
+				password = register.cleaned_data.get('password')
+				user = authenticate (username = username, password = password)
+				if user is not None:
+					login(request,user)
+				return render(request,'index.html',)
+		elif (request.POST['action'] == 'Login'):
+			register = RegisterForm(request.POST)
+			username = register.cleaned_data.get('username')
+			password = register.cleaned_data.get('password')
+			user = authenticate(request, username=username, password=password)
 			if user is not None:
 				login(request,user)
-			return render(request,'index.html',)
+				return redirect('home')
+
 	else:
-		form = RegisterForm()
+		register = RegisterForm()
+
+	context = {
+		'form': register
+	}
+
 	return render(
 		request,
-		'formulario.html',
-		{'form' : form}
-		)
+		'formulario.html', 
+		context)
