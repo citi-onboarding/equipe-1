@@ -12,33 +12,34 @@
 			<div class="login">
 			<h3>Login</h3><br>
 
-			<form action = '' name = "action" value = 'Login' method="POST">
-			  {% csrf_token %}
-			  Username:<br>
-			  <input type="text" name="username"><br>
-			  Senha:<br>
-			  <input type="password" name="password"><br>
-			  <button type="submit" name="action" value = 'Login'>Login</button><br>
-			</form>
-		</div>
+			<form method="POST">
+              {% csrf_token %}
+              Username:<br>
+              <input type="text" name="username"><br>
+              Senha:<br>
+              <input type="password" name="password"><br>
+              <button type="submit" name="logar">Login</button><br>
+            </form>
+        </div>
 
-		<br>
+        <br>
 
-		<div class="cadastro">
-			<h3>Cadastro</h3><br>
+        <div class="cadastro">
+            <h3>Cadastro</h3><br>
 
-			<form action='' name = "action2" value = 'Register' method="POST">
-   			 {% csrf_token %}
-   				Nome:<br>
-			  	<input type="text" name="name"><br>
-			  	Username:<br>
-			  	<input type="text" name="username"><br>
-			  	Senha:<br>
-			  	<input type="password" name="password"><br>
-			  	Telefone:<br>
-			  	<input type="text" name="telefone"><br>
-    		<button type="submit" name="action2" value = 'Register'></button><br>
-			</form>
+            <form method="POST">
+                {% csrf_token %}
+                   Nome:<br>
+                  <input type="text" name="name"><br>
+                  Username:<br>
+                  <input type="text" name="username"><br>
+                  Senha:<br>
+                  <input type="password" name="password"><br>
+                  Telefone:<br>
+                  <input type="text" name="telefone"><br>
+            <button type="submit" name="cadastro"></button><br>
+            <a href ="logout"> Sair </a>
+            </form>
 		</div>
 		</div>
 </body>

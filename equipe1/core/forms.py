@@ -21,3 +21,10 @@ class RegisterForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+class LoginForm(forms.ModelForm):
+
+    class Meta:
+        model = User
+        fields = ['username', 'password']
+
