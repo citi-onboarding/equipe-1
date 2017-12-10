@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="{% static "styleLogin.css" %}" />
+</head>
+<body>
+	<div>
+		<div class="formulario login">
+			<form>
+				<input type="text" name="usuario" placeholder="Usuário" required="required"><br>
+				<input type="text" name="senha" placeholder="Senha" required="required"><br>
+				<button type="submit">Login</button><br>
+			</form>
+		</div>
+		<div class="formulario cadastro">
+			<form>
+				<input type="text" name="nome" placeholder="Nome e Sobrenome" required="required"><br>
+				<input type="text" name="usuario" placeholder="Usuário" required="required"><br>
+				<input type="text" name="senha" placeholder="Senha" required="required"><br>
+				<input type="text" name="senha" placeholder="Confirme a senha" required="required"><br>
+				<input type="text" name="telefone" placeholder="Telefone" required="required"><br>
+				<button type="submit">Cadastrar</button><br>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
