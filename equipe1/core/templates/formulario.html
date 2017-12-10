@@ -40,6 +40,12 @@
             <button type="submit" name="cadastro"></button><br>
             <a href ="logout"> Sair </a>
             </form>
+
+          	{% if logado%}
+            	<p> fala {{ usuario }} </p>
+          	{% endif %}
+            
+            <p>{{entrou}}</p>
 		</div>
 		</div>
 </body>
