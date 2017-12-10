@@ -1,9 +1,14 @@
+body {
+	font-family: 'Roboto',sans-serif;
+	margin: 0;
+}
+
 .row{
 	display: inline-flex;
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-}
+} 
 
 .login{
 	background-color: lightblue;
@@ -23,4 +28,77 @@
 button{
 	margin-top: 18.72px;
 	margin-bottom: 18.72px;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: auto;
+	height: 70px;
+	color: #c92e3d;
+}
+
+.navbar a {
+	color: #c92e3d;
+	text-align: right;
+	font-size: 1em;
+}
+
+.navbar-logo {
+	width: 150px;
+	height: auto;
+	margin: 0 3vw 0 3vw;
+}
+
+.navbar-right {
+	display: flex;
+	justify-content: space-between;
+	width: 400px;
+	margin: 0 3vw 0 3vw;
+}
+
+.bt-entrar {
+	border: 2px solid #c92e3d;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	background-color: #c92e3d;
+	color: #ffffff;
+}
+
+.footer-left {
+	display: flex;
+	align-items: flex-end;
+}
+
+.footer-logo {
+	width: 150px;
+	height: auto;
+	margin: 0 1vw 0 3vw;
+}
+
+.footer-contact {
+	margin: 0 3vw 0 3vw;
+}
+
+.footer-links {
+	font-size: 0.8em;
+}
+
+.footer ul li {
+	list-style: none;
+	padding: 1vh;
+}
+
+.footer a {
+	color: #ffffff;
 }
