@@ -9,7 +9,7 @@ from django.http import HttpResponseRedirect
 def index(request):
 	return render(
 		request,
-		'index.html',
+		'home.html',
 		)
 
 def signOut(request):

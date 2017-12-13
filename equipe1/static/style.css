@@ -102,3 +102,20 @@ a:link {
 .footer a {
 	color: #ffffff;
 }
+
+.banner{
+	background: url('images/banner.png') no-repeat center;
+	background-size: cover;
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.banner h1 {
+	font-size: 4em;
+	color: #000000;
+	margin-bottom: 35px; 
+	text-align: center;
+}
