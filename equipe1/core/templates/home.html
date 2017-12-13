@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, no-scalable">
+	<link rel="stylesheet" type="text/css" href="{% static "style.css" %}" />
+	<?xml version="1.0" encoding="utf-8"?>
+	<title>alugue.me</title>
+</head>
+<body>
+	{% block content %}
+		<div class="banner">
+			<h1>Um novo lar só esperando por você</h1>
+  		</div>
+	{% endblock %}
+</body>
+</html>
