@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<table>
+  <thead>
+    <tr>
+      <th>Casa</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for casa in lista %}
+      <tr>
+        <td>{{ casa.titulo }}</td>
+        <td><img src="{{ casa.foto.url }}"></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div> {{ casas }} </div>
+{%endblock%}
