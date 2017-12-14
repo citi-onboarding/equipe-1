@@ -1,25 +1,38 @@
 from django.shortcuts import render
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from .forms import RegisterForm
-from django.http import HttpResponseRedirect
-# Create your views here.
+from .forms import *
+from django.http import HttpResponseRedirect,HttpResponse
+from .models import *
+
+def quemSomos(request):
+	return redirect(quemSomosPage)
 
 def index(request):
+
+	if request.user.is_authenticated:
+		logado = 1
+		username = request.user.name
+
+	else:
+		logado = 0
+		username = ''
+
+	context = {
+				'usuario': username,
+				'logado': logado,
+	}	    
+		
 	return render(
 		request,
 		'home.html',
+		context
 		)
-
-def signOut(request):
-	if(request.method == POST):
-		logout(request)
-		return redirect('home')
 
 def logIn(request):
 	if(request.method == 'POST'):
-		if (request.POST['action2'] == 'Register'):
+		if 'cadastro' in request.POST:
 			register = RegisterForm(request.POST)
 			if register.is_valid():
 				register.save()
@@ -28,24 +41,89 @@ def logIn(request):
 				user = authenticate (username = username, password = password)
 				if user is not None:
 					login(request,user)
-				return render(request,'index.html',)
-		elif (request.POST['action'] == 'Login'):
-			register = RegisterForm(request.POST)
-			username = register.cleaned_data.get('username')
-			password = register.cleaned_data.get('password')
-			user = authenticate(request, username=username, password=password)
-			if user is not None:
-				login(request,user)
-				return redirect('home')
+					return redirect(index)
+		elif 'logar' in request.POST:
+			entrou = 1;
+			logar = LoginForm(request.POST)
+			if logar.is_valid():
+				username = logar.cleaned_data.get('username')
+				password = logar.cleaned_data.get('password')
+				user = authenticate(username=username, password=password)
+				if user is not None:
+					login(request,user)
+					return redirect(index)
 
 	else:
 		register = RegisterForm()
+		logar = LoginForm()
+
+	if request.user.is_authenticated:
+		logado = 1
+		username = request.user.name
+	else:
+		logado = 0
+		username = ''
 
 	context = {
-		'form': register
-	}
+				'usuario': username,
+				'logado': logado,
+				'register':register
+	}	    
 
 	return render(
 		request,
-		'formulario.html', 
-		context)
+		'logincadastro.html', 
+		context
+		)
+
+
+
+def logOut(request):
+	logout(request)
+	return redirect(index)
+
+def perfil(request):
+	if request.user.is_authenticated:
+		logado = 1
+		username = request.user.name
+
+	else:
+		logado = 0
+		username = ''
+
+	context = {
+				'usuario': username,
+				'logado': logado,
+				'entrou': entrou,
+	}	    
+
+
+	return render(
+		request,
+		'.html', 
+		context
+		)
+
+def lista(request):
+	if request.user.is_authenticated:
+		logado = 1
+		username = request.user.name
+
+	else:
+		logado = 0
+		username = ''
+
+	# listadecasas = 
+	context = {
+				'usuario': username,
+				'logado': logado,
+				'entrou': entrou,
+				'listadecasas': listadecasas,
+	}	    
+
+
+	return render(
+		request,
+		'.html', 
+		context
+		)
