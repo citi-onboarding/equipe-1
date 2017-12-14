@@ -1,51 +1,12 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 <head>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, no-scalable">
-	<link rel="stylesheet" type="text/css" href="{% static "style.css" %}" />
-	<?xml version="1.0" encoding="utf-8"?>
 	<title>alugue.me</title>
 </head>
 	<body>
-		<nav class="navbar">
-			<a class="navbar-logo" href="/">
-				<img src="{% static "images/logo.svg" %}">				
-			</a>
-
-			<div class="navbar-right">
-				<a href="{% url "lista" %}">Lista de casas</a>
-				<a href="{% url "quemsomos" %}">Quem Somos</a>
-				{% if logado %}
-				<a href="logout" class = "bt-entrar" type="button">Logout</a>
-				{% else %}	
-				<a class="bt-entrar" href="{% url "login" %}" type="button">Entrar</a>
-				{% endif %}
-			</div>
-		</nav>
-
-		{% block content %}
-		{% endblock %}
-
-		<footer class="footer">
-			<div class="footer-left">
-				<div class="footer-logo">
-					<img src="{% static "images/logocopyright.svg" %}">
-				</div>
-				<div class="footer-links">					
-					<a href="">Lista de casas</a>
-					<a href="">Quem Somos</a>
-				</div>
-			</div>
-			
-			<div class="footer-contact">
-				<ul>
-					<li><img src="{% static "icons/localization.png" %}"> <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i><span>Várzea, 99 - PE.</span></li>			
-	  				<li><img src="{% static "icons/email.png" %}"> <a href="mailto:inovagrojr.ufrpe@gmail.com"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span>contato@alugueme.com</span></a></li>
-	  				<li><img src="{% static "icons/wpp.png" %}"> <i class="fa fa-whatsapp" aria-hidden="true"></i><span>+55 (XX) XXXX-XXXX</span></li>
-	  			</ul>
-			</div>
-		</footer>
+		<h1 style="color: red">alugue.me</h1>
+		<a>Entrar</a>	
 	</body>
 </html>
