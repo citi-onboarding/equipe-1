@@ -15,9 +15,13 @@
 			</a>
 
 			<div class="navbar-right">
-				<a href="">Lista de casas</a>
-				<a href="">Quem Somos</a>
-				<a class="bt-entrar" href="formulario" type="button">Entrar</a>
+				<a href="{% url "lista" %}">Lista de casas</a>
+				<a href="{% url "quemsomos" %}">Quem Somos</a>
+				{% if logado %}
+				<a href="logout" class = "bt-entrar" type="button">Logout</a>
+				{% else %}	
+				<a class="bt-entrar" href="{% url "login" %}" type="button">Entrar</a>
+				{% endif %}
 			</div>
 		</nav>
 
