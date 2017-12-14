@@ -1,9 +1,16 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+
 body{
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 }
+
 h3{
 	
 }
+
 .formulario{
 	font-size: 180%;
 	color: #c92e3d;
@@ -13,6 +20,21 @@ h3{
 	width: 80%;
 	height: auto;
 }
+
+body {
+	font-family: 'Roboto',sans-serif;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.row{
+	display: inline-flex;
+	justify-content: center;
+	width: 100%;
+	/* height: 100%; */
+}
+
 .login{
 	width: 50%;
 	height: auto;
@@ -43,4 +65,125 @@ button{
 	height: 40px;
 	margin: 1%;
 	background: #E6E6E6;
+	margin-top: 18.72px;
+	margin-bottom: 18.72px;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: auto;
+	height: 70px;
+	color: #c92e3d;
+}
+
+.navbar a {
+	color: #c92e3d;
+	text-align: right;
+	font-size: 1em;
+}
+
+.navbar-logo {
+	width: 150px;
+	height: auto;
+	margin: 0 3vw 0 3vw;
+}
+
+.navbar-right {
+	display: flex;
+	justify-content: space-between;
+	width: 400px;
+	margin: 0 3vw 0 3vw;
+}
+
+.bt-entrar {
+	border: 2px solid #c92e3d;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	background-color: #c92e3d;
+	color: #ffffff;
+}
+
+.footer-left {
+	display: flex;
+	align-items: flex-end;
+}
+
+.footer-logo {
+	width: 150px;
+	height: auto;
+	margin: 0 1vw 0 3vw;
+}
+
+.footer-contact {
+	margin: 0 3vw 0 3vw;
+	font-family: 'Roboto',sans-serif;
+	font-size: 10px;
+}
+
+.footer-contact ul li img{
+	margin-right: 2px;
+}
+
+.footer-links {
+	font-size: 0.8em;
+}
+
+.footer ul li {
+	list-style: none;
+	padding: 1vh;
+}
+
+.footer a {
+	color: #ffffff;
+}
+
+.banner{
+	background: url('images/banner.png') no-repeat center;
+	background-size: cover;
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.banner h1 {
+	font-size: 4em;
+	color: #000000;
+	margin-bottom: 35px; 
+	text-align: center;
+}
+
+.content{
+	height: 55%;
+    padding-top: 2%;
+}
+
+.title{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 0;
+}
+
+.title h3{
+	font-weight: normal;
+	font-size: 25px;
+}
+
+.text-footer{
+	color: #c92e3d;
+	font-family: 'Roboto',sans-serif;
+	font-size: 17.5px;
+	text-align: right;
 }
