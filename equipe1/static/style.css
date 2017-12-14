@@ -112,8 +112,6 @@ a:link {
 	width: 100%;
 	background-color: #c92e3d;
 	color: #ffffff;
-	bottom: 0;
-	position: fixed;
 }
 
 .footer-left {
@@ -188,28 +186,4 @@ a:link {
 	font-family: 'Roboto',sans-serif;
 	font-size: 17.5px;
 	text-align: right;
-	margin-right: 13.5%;
-    margin-top: 5px;
 }
-
-@media screen and (max-width: 768px){
-	.footer{
-		padding-top: 14px;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-
-	.footer-left{
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	.footer-contact ul{
-		padding-left: 0;
-		list-style: none;
-	    padding: 1vh;
-	    display: flex;
-	    flex-direction: column;
-	    justify-content: center;
-	    align-items: center;
-	}
