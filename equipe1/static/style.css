@@ -22,7 +22,7 @@ h3{
 }
 
 body {
-	font-family: 'Roboto',sans-serif;
+	font-family: Verdana;
 	margin: 0;
 	height: 100%;
 	width: 100%;
@@ -93,12 +93,14 @@ button{
 .navbar-right {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	width: 400px;
 	margin: 0 3vw 0 3vw;
 }
 
 .bt-entrar {
 	border: 2px solid #c92e3d;
+	padding: 5px;
 }
 
 a:link {
@@ -112,6 +114,7 @@ a:link {
 	width: 100%;
 	background-color: #c92e3d;
 	color: #ffffff;
+	bottom: 0;
 }
 
 .footer-left {
@@ -127,7 +130,7 @@ a:link {
 
 .footer-contact {
 	margin: 0 3vw 0 3vw;
-	font-family: 'Roboto',sans-serif;
+	font-family: Verdana;
 	font-size: 10px;
 }
 
@@ -165,6 +168,94 @@ a:link {
 	text-align: center;
 }
 
+.content .row{
+	height: 255px;
+}
+
+.card{
+	height: 100%;
+	width: 229px;
+	background-color: #c92e3d;
+	font-family: Verdana;
+}
+
+.imagem-card{
+	width: 100%;
+	height: 70%;
+}
+
+.imagem-card img{
+	width: 100%;
+	height: 100%;
+}
+
+.placa-card{
+	width: 100%;
+	height: 30%;
+	background-color: #e6e6e6;
+	display: inline-flex;
+	justify-content: space-around;
+}
+
+.column-1{
+	display: block;
+}
+
+.column-2{
+	display: block;
+	justify-content: flex-end;
+}
+
+.titulo-casa{
+	display: flex;
+	justify-content: flex-start;
+	font-weight: normal;
+	height: 17px;
+}
+
+.titulo-casa h3{
+	margin: 0;
+}
+
+.date{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-left: auto;
+	font-size: 11px;
+	margin-top: 3px;
+	margin-bottom: 25px;
+}
+
+.address{
+	font-size: 11px;
+}
+
+.price{
+	color: #c92e3d;
+	font-weight: bold;
+	font-family: verdana;
+	display: flex;
+	height: 51%;
+    align-items: center;
+}
+
+.btn-alugar{
+    background-color: #c92e3d;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	font-size: 14px;	
+	width: 33%;
+	height:38%;
+	min-width: 75px;
+	cursor: pointer;
+	margin: 0;
+}
+
 .content{
 	height: 55%;
     padding-top: 2%;
@@ -183,7 +274,31 @@ a:link {
 
 .text-footer{
 	color: #c92e3d;
-	font-family: 'Roboto',sans-serif;
+	font-family: Verdana;
 	font-size: 17.5px;
 	text-align: right;
+	margin-right: 13.5%;
+    margin-top: 5px;
 }
+
+@media screen and (max-width: 768px){
+	.footer{
+		padding-top: 14px;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.footer-left{
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.footer-contact ul{
+		padding-left: 0;
+		list-style: none;
+	    padding: 1vh;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	}
