@@ -305,3 +305,56 @@ input{
 	    justify-content: center;
 	    align-items: center;
 	}
+}
+
+.quem-somos {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding: 0px 30px 20px 30px;
+}
+
+.quem-somos-img {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+}
+
+.quem-somos-img img {
+	max-height: 250px;
+	order: 2;
+}
+
+.quem-somos-data {
+	margin-left: 40px;
+}
+
+.quem-somos-data h2 {
+	color: #c92e3d;
+	order: 1;
+}
+
+.quem-somos-data p {
+	text-align: justify;
+	font-size: 12px;
+	order: 3;
+}
+
+@media screen and (max-width: 800px) {
+	.quem-somos {
+		flex-wrap: wrap;
+	}
+
+	.quem-somos-img img {
+		max-width: 500px;
+	}
+
+	.quem-somos-data {
+		text-align: center;
+	}
+
+	.quem-somos-data {
+		margin: auto;
+	}
+}

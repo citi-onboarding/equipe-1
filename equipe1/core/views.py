@@ -7,7 +7,10 @@ from django.http import HttpResponseRedirect,HttpResponse
 from .models import *
 
 def quemSomos(request):
-	return redirect(quemSomosPage)
+	return render(
+		request,
+		'quemSomosPage.html',
+		)
 
 def index(request):
 
