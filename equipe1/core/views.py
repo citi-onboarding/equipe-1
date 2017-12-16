@@ -43,7 +43,6 @@ def logIn(request):
 					login(request,user)
 					return redirect(index)
 		elif 'logar' in request.POST:
-			entrou = 1;
 			logar = LoginForm(request.POST)
 			if logar.is_valid():
 				username = logar.cleaned_data.get('username')
@@ -94,7 +93,6 @@ def perfil(request):
 	context = {
 				'usuario': username,
 				'logado': logado,
-				'entrou': entrou,
 	}	    
 
 
@@ -117,7 +115,6 @@ def lista(request):
 	context = {
 				'usuario': username,
 				'logado': logado,
-				'entrou': entrou,
 				'listadecasas': listadecasas,
 	}	    
 

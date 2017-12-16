@@ -281,6 +281,10 @@ a:link {
     margin-top: 5px;
 }
 
+input{
+	color: black;
+}
+
 @media screen and (max-width: 768px){
 	.footer{
 		padding-top: 14px;

@@ -17,7 +17,11 @@
 			<div class="navbar-right">
 				<a href="">Lista de casas</a>
 				<a href="">Quem Somos</a>
-				<a class="bt-entrar" href="formulario" type="button">Entrar</a>
+				{% if logado %}
+				<a class = "bt-entrar" href ="logout" type = "button">Sair</a>
+				{% else %}
+				<a class="bt-entrar" href="login" type="button">Entrar</a>
+				{% endif %}
 			</div>
 		</nav>
 
