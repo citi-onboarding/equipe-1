@@ -8,13 +8,36 @@
     </tr>
   </thead>
   <tbody>
-    {% for casa in lista %}
+    {% for casa in casas %}
       <tr>
         <td>{{ casa.titulo }}</td>
-        <td><img src="{{ casa.foto.url }}"></td>
+        <td ><img style="width:100px; height:100px" src="{{ casa.foto.url }}"></td>
       </tr>
     {% endfor %}
   </tbody>
 </table>
 <div> {{ casas }} </div>
+
+{% if casas.has_other_pages %}
+  <ul class="pagination">
+    {% if casas.has_previous %}
+      <li><a href="?page={{ casas.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in casas.paginator.page_range %}
+      {% if casas.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if casas.has_next %}
+      <li><a href="?page={{ casas.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
 {%endblock%}

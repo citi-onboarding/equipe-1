@@ -6,6 +6,8 @@ from django.shortcuts import render, redirect
 from .forms import *
 from django.http import HttpResponseRedirect,HttpResponse
 from .models import *
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 def index(request):
@@ -103,7 +105,7 @@ def lista(request):
 
 	casas_list = Casa.objects.all()
 	page = request.GET.get('page', 1)
-	paginator = Paginator(casas_list, 10)
+	paginator = Paginator(casas_list, 2)
 	try:
 	    casas = paginator.page(page)
 	except PageNotAnInteger:
@@ -115,3 +117,8 @@ def lista(request):
 
 
 	
+@login_required(login_url="core/formulario.html")
+def meuPerfil(request):
+	usuario = request.user
+
+	return render(request, 'perfil.html', {'usuario': usuario},)
