@@ -1,19 +1,14 @@
 from django.shortcuts import render
 from django.contrib.auth import login, authenticate, logout
-<<<<<<< HEAD
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-=======
->>>>>>> Gabriela
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .forms import *
 from django.http import HttpResponseRedirect,HttpResponse
 from .models import *
-<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-=======
 
 def quemSomos(request):
 	return redirect(quemSomosPage)
@@ -28,6 +23,11 @@ def index(request):
 	else:
 		logado = 0
 		username = ''
+
+	return render(
+		request,
+		'index.html',
+		)
 
 
 	# context{
@@ -61,7 +61,6 @@ def logIn(request):
 				if user is not None:
 					login(request,user)
 					return redirect(index)
-
 		elif 'logar' in request.POST:
 			entrou = 1;
 			logar = LoginForm(request.POST)
@@ -71,14 +70,11 @@ def logIn(request):
 				user = authenticate(username=username, password=password)
 				if user is not None:
 					login(request,user)
-
 					return redirect(index)
-
 
 	else:
 		register = RegisterForm()
 		logar = LoginForm()
-
 
 	if request.user.is_authenticated:
 		logado = 1
@@ -86,7 +82,6 @@ def logIn(request):
 	else:
 		logado = 0
 		username = ''
-
 
 	context = {
 				'usuario': username,
@@ -102,10 +97,10 @@ def logIn(request):
 
 
 
-
 def logOut(request):
 	logout(request)
 	return redirect(index)
+
 
 def perfil(request):
 	if request.user.is_authenticated:

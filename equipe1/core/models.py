@@ -34,7 +34,9 @@ class Casa(models.Model):
     endereco = models.CharField(max_length=140)
     data_adicao = models.DateField(auto_now=True) #vai ter argumento?
     foto = models.FileField(upload_to='images/casas/') #botar o caminho da pasta onde vao ficar as imagens
-    usuario = models.CharField(max_length=50)
+    usuario =  models.ForeignKey(
+        'User',
+        on_delete=models.CASCADE,)
     disponibilide = models.BooleanField
     descricao = models.CharField(max_length=200)
     codigo = models.AutoField(primary_key=True)

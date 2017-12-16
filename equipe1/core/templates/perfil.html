@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div class="Informações do usuario">
+<p> {{usuario.name}} </p>
+<p> {{usuario.telefone}} </p>
+<a href="logOut"> sair </a>
+</div>
+{%endblock%}
