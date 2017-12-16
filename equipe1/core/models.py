@@ -64,5 +64,16 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = _('users')
 
 
+class Contrato(models.Model):
+    contratante = models.ForeignKey(
+        'User',
+        on_delete=models.CASCADE,)
+    contratado = models.ForeignKey(
+        'Casa',
+        on_delete=models.CASCADE,)
+    ativo = models.BooleanField('Está ativo?', blank=True, default=True)
+    data_atividade = models.DateField(auto_now=True)
+
+
 
 
